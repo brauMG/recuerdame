@@ -26,7 +26,6 @@
 }
 
 html {
-  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -54,7 +53,6 @@ section {
 
 body {
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -189,7 +187,6 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
   font-size: 1em;
 }
 
@@ -238,18 +235,12 @@ button {
   border-radius: 0;
 }
 
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
 input,
 button,
 select,
 optgroup,
 textarea {
   margin: 0;
-  font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
@@ -430,7 +421,6 @@ template {
 }
 
 html {
-  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -458,7 +448,6 @@ section {
 
 body {
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -593,7 +582,6 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
   font-size: 1em;
 }
 
@@ -642,18 +630,12 @@ button {
   border-radius: 0;
 }
 
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
 input,
 button,
 select,
 optgroup,
 textarea {
   margin: 0;
-  font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
@@ -774,7 +756,6 @@ h6,
 .h5,
 .h6 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
   font-weight: 400;
   line-height: 1.2;
   color: inherit;
@@ -929,7 +910,6 @@ code,
 kbd,
 pre,
 samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 code {
@@ -2182,7 +2162,7 @@ pre code {
 }
 
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.4375rem + 2px);
+  height: 36px;
 }
 
 select.form-control:focus::-ms-value {
@@ -5647,7 +5627,6 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5772,7 +5751,6 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -8866,10 +8844,14 @@ a.text-dark:focus {
     box-shadow: 0 2px 2px 0 rgba(28, 48, 176, 0.14), 0 3px 1px -2px rgba(67, 109, 176, 0.2), 0 1px 5px 0 rgba(7, 42, 111, 0.12);
 }
 
-.btn.btn-primary.btn-link {
-  background-color: transparent;
-  color: #255982;
-  box-shadow: none;
+.btn.btn-primary.btn-link-login {
+    background-color: #80cbff;
+    color: #ffffff;
+    box-shadow: none;
+    border-radius: 25px;
+    text-transform: capitalize;
+    display: block;
+    width: 90%;
 }
 
 .btn.btn-primary.btn-link:hover,
@@ -10898,7 +10880,7 @@ fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
 }
 
 .form-check .form-check-input:checked+.form-check-sign .check {
-  background: #ff8d3c;
+  background: #7ecaff;
 }
 
 .form-check .form-check-input:checked+.form-check-sign .check:before {
@@ -11362,11 +11344,11 @@ fieldset[disabled] .is-focused .switch label:focus {
 
 .form-control,
 .is-focused .form-control {
-  background-image: linear-gradient(to top, #ff8d3c 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px)
+  background-image: linear-gradient(to top, #7ecaff 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px)
 }
 
 .form-control:invalid {
-    background-image: linear-gradient(to top, #970f95 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+    background-image: linear-gradient(to top, #7ecaff  2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
 }
 
 .form-control:read-only {
@@ -12941,7 +12923,7 @@ select.form-control {
 .form-group {
   padding-bottom: 10px;
   position: relative;
-  margin: 8px 0 0;
+  margin: 9px 0 0;
 }
 
 .form-group .bmd-label-static {
@@ -13678,7 +13660,6 @@ h6,
 .h2,
 .h3,
 .h4 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
   line-height: 1.5em;
 }
@@ -14502,12 +14483,11 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .sidebar .sidebar-wrapper {
-  position: relative;
-  height: calc(100vh - 365px);
-  overflow: auto;
-  width: 260px;
-  z-index: 4;
-  padding-bottom: 30px;
+    position: relative;
+    height: calc(100vh - 200px);
+    overflow: auto;
+    width: 260px;
+    z-index: 4;
 }
 
 .sidebar .sidebar-wrapper .dropdown .dropdown-backdrop {
@@ -14642,13 +14622,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .sidebar .nav i {
-  font-size: 30px;
-  float: left;
-  margin-right: 15px;
-  line-height: 30px;
-  width: 30px;
-  text-align: center;
-  color: #a9afbb;
+    line-height: 30px;
+    text-align: center;
+    display: block;
 }
 
 .sidebar .nav li a,
@@ -14787,10 +14763,12 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
 }
 
-.sidebar[data-color="tarvi"] li.active>a {
-    background: linear-gradient(60deg, #970f95, #c60fc4);
-    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(151, 15, 149, 0.4);
-    border-radius: 50px;
+.sidebar[data-color="reqrdame"] li.active>a {
+    background: linear-gradient(60deg, #7ecaff , #7ecaff);
+    box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(237 246 254);
+    width: fit-content;
+    margin: auto;
+    border-radius: 15px;
 }
 
 .sidebar .nav li a i {
@@ -14902,9 +14880,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .main-panel>.content {
-  margin-top: 55px;
-  padding: 30px 15px;
-  min-height: calc(100vh - 123px);
+    margin-top: 5%;
+    padding: 30px 50px 15px 50px;
+    min-height: calc(100vh - 123px);
 }
 
 .main-panel>.footer {
@@ -14918,7 +14896,6 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 25px;
 }
 
 .main-panel .header {
@@ -16327,7 +16304,6 @@ legend {
 }
 
 .serif-font {
-  font-family: "Roboto Slab", "Times New Roman", serif;
 }
 
 * {
@@ -16340,12 +16316,12 @@ legend {
 }
 
 a {
-  color: #9c27b0;
+  color: #000000;
 }
 
 a:hover,
 a:focus {
-  color: #89229b;
+  color: #00a5bb;
   text-decoration: none;
 }
 
@@ -16667,7 +16643,11 @@ label {
 }
 
 .card .card-category {
-  margin-top: 10px;
+    margin-top: 0px;
+    color: black !important;
+    line-height: 20px;
+    font-size: 16px;
+    margin-bottom: 2%;
 }
 
 .card .card-category .material-icons {
@@ -16808,7 +16788,7 @@ label {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-    background: linear-gradient(60deg, #255982, #0c385a);
+    background: linear-gradient(60deg, #7ecaff, #a8e5f3);
 }
 
 .card .card-header-info .card-icon,
@@ -16994,8 +16974,9 @@ label {
 }
 
 .card .card-title {
-  margin-top: 0;
-  margin-bottom: 3px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    margin-left: -1px;
 }
 
 .card .card-body {
@@ -17004,7 +16985,7 @@ label {
 }
 
 .card .card-body .form-group {
-  margin: 8px 0 0;
+  margin: 9px 0 0;
 }
 
 .card .card-header {

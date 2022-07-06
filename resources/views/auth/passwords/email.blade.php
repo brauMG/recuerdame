@@ -11,7 +11,7 @@
                         <div class="card-header card-header-primary text-center">
                             <h4 class="card-title"><strong>{{ __('Forgot Password') }}</strong></h4>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body mt-5 mb-1">
                             @if (session('status'))
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -27,9 +27,9 @@
                             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="material-icons">email</i>
-                  </span>
+                                      <span class="input-group-text">
+                                        <i class="material-icons">email</i>
+                                      </span>
                                     </div>
                                     <input type="email" name="email" class="form-control" placeholder="{{ __('Email...') }}" value="{{ old('email') }}" required>
                                 </div>
@@ -40,8 +40,13 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="card-footer justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Send Password Reset Link') }}</button>
+                        <div class="card-footer justify-content-center" style="flex-wrap: wrap;">
+                            <button type="submit" class="btn btn-primary btn-link-login btn-lg">{{ __('Send Password Reset Link') }}</button>
+                            <div class="form-check mt-3 text-left">
+                                <a href="{{route('login')}}" class="reqrdame-color text-left">
+                                    <span style="font-size: 12px">Volver al Inicio</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </form>

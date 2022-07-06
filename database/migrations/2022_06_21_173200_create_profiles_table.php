@@ -26,7 +26,8 @@ class CreateProfilesTable extends Migration
             $table->string('birth_city')->nullable();
             $table->string('birth_state')->nullable();
             $table->dateTime('birth_date');
-            $table->dateTime('passing_location');
+            $table->dateTime('passing_date');
+            $table->string('passing_location')->nullable();
             $table->string('languages')->nullable();
             $table->string('quotes')->nullable();
             $table->string('hobbies')->nullable();
