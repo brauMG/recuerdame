@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LifetimeController;
+use App\Http\Controllers\PostMentionsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,4 +30,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/inicio-admin',[DashboardController::class, 'index']);
     // profile information
     Route::get('/informacion',[ProfileController::class, 'index']);
+    // mentions information
+    Route::get('/menciones',[PostMentionsController::class, 'index']);
+    // lifetime information
+    Route::get('/trayectoria',[LifetimeController::class, 'index']);
+    Route::get('/trayectoria-nuevo',[LifetimeController::class, 'add'])->name('CreatePost');
+
 });

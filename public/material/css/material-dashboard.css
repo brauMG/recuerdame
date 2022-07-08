@@ -16272,7 +16272,7 @@ thead.thead-inverse th,
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-  background-color: white;
+  background-color: transparent;
 }
 
 .table.table-hover tbody tr:hover {
@@ -16631,7 +16631,7 @@ label {
   border: 0;
   margin-bottom: 30px;
   margin-top: 30px;
-  border-radius: 6px;
+  border-radius: 25px;
   color: #333333;
   background: #fff;
   width: 100%;

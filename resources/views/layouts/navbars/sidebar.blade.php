@@ -20,7 +20,7 @@
             </li>
 
             <li id="mi-cuenta" class="nav-item{{ $activePage == 'Perfil' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/profile') }}">
+                <a class="nav-link" href="{{ url('/perfil') }}">
                     <i><img class="sidebar-icon" src="{{ asset('material') }}/img/perfil.png"></i>
                     <p class="sidebar-element-text">{{ __('Perfil') }}</p>
                 </a>
@@ -33,22 +33,22 @@
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Mi Cuenta' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/information') }}">
+            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Menciones' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ url('/menciones') }}">
                     <i><img class="sidebar-icon" src="{{ asset('material') }}/img/menciones.png"></i>
                     <p class="sidebar-element-text">{{ __('Menciones') }}</p>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Mi Cuenta' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/my_profile') }}">
+            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Trayectoria' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ url('/trayectoria') }}">
                     <i><img class="sidebar-icon" src="{{ asset('material') }}/img/trayectoria.png"></i>
                     <p class="sidebar-element-text">{{ __('Trayectoria') }}</p>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Mi Cuenta' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/my_profile') }}">
+            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Galeria' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ url('/galeria') }}">
                     <i><img class="sidebar-icon" src="{{ asset('material') }}/img/galeria.png"></i>
                     <p class="sidebar-element-text">{{ __('Galeria') }}</p>
                 </a>

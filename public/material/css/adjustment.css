@@ -31,7 +31,8 @@ body {
 }
 
 .thead-color {
-    background-color: #ffa154;
+    background-color: #7ecaff;
+    color: black;
 }
 
 .odd {
@@ -39,7 +40,7 @@ body {
 }
 
 .even {
-    background-color: #ffe2c9 !important;
+    background-color: white !important;
 }
 
 .buttons-pdf:hover {
@@ -754,8 +755,7 @@ button, a {
     border: solid !important;
     border-width: 0.5px !important;
     border-color: #d8d8d8 !important;
-    color: #868686;
-    box-shadow: 0 0px 0px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 0px 0px -5px rgb(0 0 0 / 20%) !important;
+    color: #000000;
     margin-top: 1%;
 }
 
@@ -772,8 +772,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
     border: solid !important;
     border-width: 0.5px !important;
     border-color: #d8d8d8 !important;
-    color: #868686;
-    box-shadow: 0 0px 0px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 0px 0px -5px rgb(0 0 0 / 20%) !important;
+    color: #000000;
     margin-top: 1%;
 }
 
@@ -781,12 +780,6 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
     width: auto;
     height: auto;
     border-radius: 15px;
-}
-.tarvi-card {
-    background-color: #fff5ed !important;
-    border: solid;
-    border-width: 1px;
-    border-color: #a7299d;
 }
 
 .page-column {
@@ -1015,6 +1008,10 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
     margin: -50% 2.5% 0 2.5%;
 }
 
+.media-container {
+    margin: 0 2.5% 0 2.5%;
+}
+
 .inner-inputs-container {
     margin: 0 0 0 2.5%;
 }
@@ -1027,6 +1024,44 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
     position: relative;
     font-size: 1.0rem;
     vertical-align: top;
+}
+
+.reqrdame-card {
+    background-color: transparent;
+    box-shadow: unset;
+    border: solid;
+    border-width: 0;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.container-reqr-mentions {
+    overflow: auto;
+    height: calc(100vh - 200px);
+    padding: 1% 1.5%;
+    background-color: transparent;
+    border-radius: 25px;
+    box-shadow: 0 0px 0px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%) !important;
+}
+
+.btn-mentions-status {
+    border-radius: 10px;
+    background-color: #7ecaff;
+    color: white;
+    text-transform: capitalize;
+}
+
+.btn-mentions-delete {
+    border-radius: 10px;
+    background-color: #a9dbfe;
+    color: white;
+    text-transform: capitalize;
+
+}
+
+.add-post-left {
+    height: inherit;
+    align-items: center;
 }
 
 input {
