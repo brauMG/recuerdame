@@ -1,7 +1,9 @@
 <div class="wrapper ">
-    @include('layouts.navbars.sidebar-guest-alt')
-    <div class="main-panel alt-main-panel">
-        @include('layouts.navbars.navs.guest-alt')
+    @if(\Illuminate\Support\Facades\Auth::user()->user_type === 1)
+    @include('layouts.navbars.sidebar')
+    @endif
+    <div class="main-panel">
+        @include('layouts.navbars.navs.auth')
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
         <div class="container">
             @if(isset($errors) && $errors->any())
