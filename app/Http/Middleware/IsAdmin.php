@@ -20,7 +20,5 @@ class IsAdmin
         if (Auth::user() &&  Auth::user()->type_user == 1) {
             return $next($request);
         }
-
-        return redirect('/inicio-seguidor')->with('error','You have not admin access');
     }
 }

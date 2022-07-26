@@ -55,19 +55,6 @@
                                                 </div>
                                             @endif
                                         </div>
-                                        <div class="half-input bmd-form-group{{ $errors->has('user_type') ? ' has-danger' : '' }}">
-                                            <div class="input-group">
-                                                <select style="color: #afb5bf" name="user_type" class="form-control login-input text-center font-weight-bold" placeholder="{{ __('Tipo de Usuario') }}" value="{{ old('user_type') }}" required>
-                                                    <option value="1" selected>Administrador</option>
-                                                    <option value="2">Seguidor</option>
-                                                </select>
-                                            </div>
-                                            @if ($errors->has('user_type'))
-                                                <div id="user_type-error" class="error text-danger pl-3" for="user_type" style="display: block;">
-                                                    <strong>{{ $errors->first('user_type') }}</strong>
-                                                </div>
-                                            @endif
-                                        </div>
                                     </div>
 
                                     <div class="form-flex-group mt-3">

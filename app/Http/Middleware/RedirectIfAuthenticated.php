@@ -19,19 +19,8 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null) {
         if (Auth::guard($guard)->check()) {
-            $role = Auth::user()->user_type;
-            switch ($role) {
-                case '1':
-                    return redirect('/inicio-admin');
-                    break;
-                case '2':
-                    return redirect('/inicio-seguidor');
-                    break;
+            return redirect('/inicio-admin');
 
-                default:
-                    return redirect('/login');
-                    break;
-            }
         }
         return $next($request);
     }

@@ -16,7 +16,6 @@
                                     <thead class="thead-color">
                                     <th class="text-left">Usuario</th>
                                     <th class="text-left">Comentario</th>
-                                    <th class="text-left">En Respuesta</th>
                                     <th class="text-left">Fecha</th>
                                     <th class="text-left">Acciones</th>
                                     </thead>
@@ -28,9 +27,6 @@
                                             </td>
                                             <td class="text-left">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                            </td>
-                                            <td class="text-left">
-                                                Nam tellus nisl, euismod a velit id, ornare feugiat nisl. Maecenas ultricies ante non neque tempus, in vulputate massa commodo. Quisque mollis ligula at augue interdum vulputate.
                                             </td>
                                             <td class="text-left">
                                                 7 de Julio - 13:21 p.m
@@ -50,9 +46,6 @@
                                             </td>
                                             <td class="text-left">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                            </td>
-                                            <td class="text-left">
-
                                             </td>
                                             <td class="text-left">
                                                 7 de Julio - 10:54 a.m
@@ -74,9 +67,6 @@
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                             </td>
                                             <td class="text-left">
-                                                Nam tellus nisl, euismod a velit id, ornare feugiat nisl. Maecenas ultricies ante non neque tempus, in vulputate massa commodo. Quisque mollis ligula at augue interdum vulputate.
-                                            </td>
-                                            <td class="text-left">
                                                 7 de Julio - 13:21 p.m
                                             </td>
                                             <td>
@@ -94,9 +84,6 @@
                                             </td>
                                             <td class="text-left">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                            </td>
-                                            <td class="text-left">
-
                                             </td>
                                             <td class="text-left">
                                                 7 de Julio - 10:54 a.m

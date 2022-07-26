@@ -16,9 +16,7 @@ class Posts extends Model
      */
     protected $fillable = [
         'id_profile',
-        'active_mentions',
-        'post_type',
-        'allow_mentions'
+        'post_type'
     ];
 
     protected $guarded = ['id'];

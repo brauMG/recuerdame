@@ -9,39 +9,27 @@
     </div>
     <div class="sidebar-wrapper alt-sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item{{ $activePage == 'Tablero' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/inicio-admin') }}">
+            <li class="nav-item">
+                <a class="nav-link" href="/">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/home.png"></i>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Perfil' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/perfil') }}">
+            <li id="mi-cuenta" class="nav-item">
+                <a class="nav-link" href="/">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/perfil.png"></i>
                 </a>
             </li>
 
-            <li class="nav-item{{ $activePage == 'Información' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/informacion') }}" id="custom_link">
-                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/configuracion.png"></i>
+            <li id="mi-cuenta" class="nav-item">
+                <a class="nav-link" href="/">
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/archivo.png"></i>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Menciones' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/menciones') }}">
-                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/menciones.png"></i>
-                </a>
-            </li>
-
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Trayectoria' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/trayectoria') }}">
-                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/trayectoria.png"></i>
-                </a>
-            </li>
-
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Galeria' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/galeria') }}">
-                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/galeria.png"></i>
+            <li id="mi-cuenta" class="nav-item">
+                <a class="nav-link" href="/">
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/contacto.png"></i>
                 </a>
             </li>
 

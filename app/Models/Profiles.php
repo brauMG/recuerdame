@@ -21,6 +21,7 @@ class Profiles extends Model
         'birth_city',
         'birth_state',
         'birth_date',
+        'passing_date',
         'passing_location',
         'languages',
         'quotes',
@@ -28,7 +29,6 @@ class Profiles extends Model
         'in_life',
         'interest_facts',
         'family_members',
-        'marriage',
         'allow_mentions'
     ];
 

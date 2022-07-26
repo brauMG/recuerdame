@@ -1,63 +1,53 @@
-<div class="sidebar" data-color="reqrdame" data-background-color="purple">
+<div class="sidebar alt-sidebar" data-color="reqrdame" data-background-color="purple">
     <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
     -->
     <div class="logo tarvi-logo-container">
-        <img class="sidebar_logo" src="{{url('/material/login/logo.png')}}">
-        <h5 class="user-card-header">
-            Hola {{Auth::user()->name}}
-        </h5>
+        <img class="sidebar_logo alt-sidebar_logo" src="{{url('/material/login/logo.png')}}">
     </div>
-    <div class="sidebar-wrapper">
+    <div class="sidebar-wrapper alt-sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item{{ $activePage == 'Tablero' ? ' active' : '' }}">
                 <a class="nav-link" href="{{ url('/inicio-admin') }}">
-                    <i><img class="sidebar-icon" src="{{ asset('material') }}/img/home.png"></i>
-                    <p class="sidebar-element-text">{{ __('Inicio') }}</p>
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/home.png"></i>
                 </a>
             </li>
 
             <li id="mi-cuenta" class="nav-item{{ $activePage == 'Perfil' ? ' active' : '' }}">
                 <a class="nav-link" href="{{ url('/perfil') }}">
-                    <i><img class="sidebar-icon" src="{{ asset('material') }}/img/perfil.png"></i>
-                    <p class="sidebar-element-text">{{ __('Perfil') }}</p>
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/perfil.png"></i>
                 </a>
             </li>
 
             <li class="nav-item{{ $activePage == 'Información' ? ' active' : '' }}">
                 <a class="nav-link" href="{{ url('/informacion') }}" id="custom_link">
-                    <i><img class="sidebar-icon" src="{{ asset('material') }}/img/configuracion.png"></i>
-                    <p class="sidebar-element-text">{{ __('Información') }}</p>
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/configuracion.png"></i>
                 </a>
             </li>
 
             <li id="mi-cuenta" class="nav-item{{ $activePage == 'Menciones' ? ' active' : '' }}">
                 <a class="nav-link" href="{{ url('/menciones') }}">
-                    <i><img class="sidebar-icon" src="{{ asset('material') }}/img/menciones.png"></i>
-                    <p class="sidebar-element-text">{{ __('Menciones') }}</p>
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/menciones.png"></i>
                 </a>
             </li>
 
             <li id="mi-cuenta" class="nav-item{{ $activePage == 'Trayectoria' ? ' active' : '' }}">
                 <a class="nav-link" href="{{ url('/trayectoria') }}">
-                    <i><img class="sidebar-icon" src="{{ asset('material') }}/img/trayectoria.png"></i>
-                    <p class="sidebar-element-text">{{ __('Trayectoria') }}</p>
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/trayectoria.png"></i>
                 </a>
             </li>
 
             <li id="mi-cuenta" class="nav-item{{ $activePage == 'Galeria' ? ' active' : '' }}">
                 <a class="nav-link" href="{{ url('/galeria') }}">
-                    <i><img class="sidebar-icon" src="{{ asset('material') }}/img/galeria.png"></i>
-                    <p class="sidebar-element-text">{{ __('Galeria') }}</p>
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/galeria.png"></i>
                 </a>
             </li>
 
             <li id="mi-cuenta" class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    <i><img class="sidebar-icon" src="{{ asset('material') }}/img/cerrar.png"></i>
-                    <p class="sidebar-element-text">{{ __('Cerrar Sesión') }}</p>
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/cerrar.png"></i>
                 </a>
             </li>
 

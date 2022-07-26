@@ -618,12 +618,16 @@ button, a {
 
 .profile-pic {
     width: -webkit-fill-available;
-    max-height: 500px;
+    max-height: 400px;
+    height: 400px;
+    border-radius: 90px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .cover-pic {
     width: -webkit-fill-available;
-    max-height: 500px;
+    max-height: 295px;
 }
 
 .btn-delete-cover {
@@ -647,7 +651,7 @@ button, a {
 .btn-delete-profile {
     position: absolute;
     top: 65%;
-    left: -5px;
+    left: -12px;
     border-radius: 15px !important;
     background-color: #a9dbfe !important;
     color: black !important;
@@ -656,7 +660,7 @@ button, a {
 .btn-edit-profile {
     position: absolute;
     top: 55%;
-    left: -5px;
+    left: -12px;
     border-radius: 15px !important;
     background-color: #a9dbfe !important;
     color: black !important;
@@ -1064,8 +1068,267 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
     align-items: center;
 }
 
+.alt-sidebar {
+    width: 90px;
+    box-shadow: unset;
+    background: #fff2fa;
+}
+
+.alt-sidebar_logo {
+    width: 50px;
+}
+
+.sidebar .alt-sidebar-wrapper {
+    width: 90px;
+}
+
+.alt-sidebar-icon {
+    width: 18px;
+}
+
+.alt-sidebar .nav li a, .sidebar .nav li .dropdown-menu a {
+    padding: 0px 8px;
+    margin: 5px 15px;
+}
+
+.alt-sidebar[data-color="reqrdame"] li.active>a {
+    background: linear-gradient(60deg, white , white);
+    margin: 5px auto;
+}
+
+.alt-main-panel {
+    width: calc(100% - 90px);
+    background-color: white;
+}
+
+.alt-navbar {
+    box-shadow: unset;
+}
+
+.session-options-container {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+.session-options {
+    font-size: 14px;
+    margin: 0 1%;
+}
+
+.main-panel>.content-profile-1 {
+    margin-top: 45px;
+    padding: unset;
+    min-height: calc(100vh - 45px);
+}
+
+.container-cover-1 {
+    display: block;
+    width: 100%;
+    height: 280px;
+}
+
+.container-main-1 {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: end;
+    margin: 0 1%;
+}
+
+.container-info-1 {
+    width: 35%;
+}
+
+.container-profile-img-1 {
+    width: 50%;
+    margin-top: -55%;
+}
+
+img.pic-1 {
+    width: 100%;
+    height: 300px;
+    border-radius: 65px;
+    margin: 0 0 0 3%;
+    object-fit: cover;
+}
+
+.profile-name {
+    margin: 5% 0 0 0;
+    font-size: 30px;
+}
+
+.strong {
+    font-weight: 700;
+}
+
+.container-element-1 {
+    text-align: center;
+    width: 10%;
+}
+
+.container-empty-element-1 {
+    text-align: center;
+    width: 7.5%;
+}
+
+.element-text {
+    margin-bottom: 1.5%;
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+.element-icon {
+    width: 35px;
+    margin-bottom: 15%;
+}
+
+.default-card {
+    max-width: 50%;
+    margin: auto;
+}
+
+.card-default-text-header {
+    text-align: center !important;
+    margin: 5% 0 0 0 !important;
+}
+
+.default-select-image {
+    width: 250px;
+}
+
+.p-default {
+    text-align: center;
+    margin-bottom: 5% !important;
+}
+
+.message-container-alert {
+    background-color: red;
+    color: white;
+    padding: 5px 2%;
+    border-radius: 25px;
+    text-align: center;
+    margin-bottom: 1%;
+    position: fixed;
+    top: 20px;
+    width: 50%;
+}
+
+.message-container-success {
+    background-color: green;
+    color: white;
+    padding: 5px 2%;
+    border-radius: 25px;
+    text-align: center;
+    margin-bottom: 1%;
+    position: fixed;
+    top: 20px;
+    width: 50%;
+}
+
+.message-container-warning {
+    background-color: yellow;
+    color: #737373;
+    padding: 5px 2%;
+    border-radius: 25px;
+    text-align: center;
+    margin-bottom: 1%;
+    position: fixed;
+    top: 20px;
+    width: 50%;
+}
+
+img.cover-1 {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    object-fit: cover;
+}
+
 input {
     font-family: 'Josefin', sans-serif;
+}
+
+.save-btn {
+    background-color: #7ecaff;
+    color: white;
+    border-radius: 47.5px;
+    border: unset;
+    display: block;
+    -webkit-box-shadow: 0px 2px 5px -2px #666666;
+    box-shadow: 0px 2px 5px -2px #666666;
+    cursor: pointer;
+}
+
+.close-btn {
+    background-color: #50709a;
+    color: white;
+    border-radius: 47.5px;
+    border: unset;
+    display: block;
+    -webkit-box-shadow: 0px 2px 5px -2px #666666;
+    box-shadow: 0px 2px 5px -2px #666666;
+    cursor: pointer;
+}
+
+.select-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50px;
+}
+
+.with-options {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: end;
+}
+
+.option-title {
+    width: 30%;
+}
+
+.option-mentions {
+    width: 18%;
+}
+
+.option-save {
+    width: 15%;
+    margin: 0 0 10px auto !important;
+}
+
+.new-cover-pic-msg {
+    position: absolute;
+    z-index: 9;
+    top: 3%;
+    left: 10%;
+    background-color: #7bb97f;
+    color: white;
+    padding: 1% 2%;
+    border-radius: 15px;
+}
+
+.new-profile-pic-msg {
+    position: absolute;
+    background-color: #7bb97f;
+    color: white;
+    bottom: -2%;
+    text-align: center;
+    padding: 3% 0%;
+    border-radius: 15px;
+}
+
+.down-pic {
+    margin-top: 21px;
+}
+
+.initial-right {
+    margin-top: 11px;
+}
+
+.link-decoration {
+    color: #7ecaff;
+    text-decoration: underline;
 }
 
 /*for laptop*/
@@ -1073,6 +1336,30 @@ input {
     .adaptative-col {
         flex: 0 0 33.3%;
         max-width: 33.3%;
+    }
+}
+
+/*for tablet*/
+@media (max-width: 991px) {
+    .alt-main-panel {
+        width: 100%;
+    }
+    .session-options-container {
+        display: flex;
+        width: 20%;
+        justify-content: end;
+    }
+    .session-options {
+        font-size: 14px;
+        margin: 0 5%;
+    }
+    .nav-open .alt-main-panel, .nav-open .wrapper-full-page, .nav-open .navbar .container .navbar-toggler, .nav-open .navbar .container .navbar-wrapper, .nav-open .navbar .container {
+        left: 0;
+        -webkit-transform: translate3d(-90px, 0, 0);
+        -moz-transform: translate3d(-90px, 0, 0);
+        -o-transform: translate3d(-90px, 0, 0);
+        -ms-transform: translate3d(-90px, 0, 0);
+        transform: translate3d(-90px, 0, 0);
     }
 }
 

@@ -1,175 +1,82 @@
 <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Nuevo Proyecto</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Nuevo Perfil</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <i class="material-icons">close</i>
             </button>
         </div>
-        <form action="{{route('CreateProject')}}" method="POST">
+        <form action="{{route('CreateProfile')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-body">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" id="_token"/>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Descripcion</label>
-                            <input name="descripcion" type="text"
-                                   class="form-control  @error('descripcion') is-invalid @enderror"
-                                   placeholder="Ingresa la descripción del proyecto (Nombre)" aria-label="descripcion"
-                                   aria-describedby="basic-addon1" required autocomplete="nombres" autofocus
-                                   value={{Request::old('nombres')}}>
-                        </div>
-                    </div>
-
+                    <input type="hidden" name="type" value="1">
+                    <input type="hidden" name="allow_mentions" value="1">
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Objetivo</label>
-                            <input name="objetivo" type="text"
-                                   class="form-control  @error('objetivo') is-invalid @enderror"
-                                   placeholder="Ingresa el objetivo del proyecto" aria-label="firstName"
-                                   aria-describedby="basic-addon1" required autocomplete="objetivo" autofocus
-                                   value={{Request::old('objetivo')}}>
+                            <span class="pages-span">Foto de Perfil</span>
+                            <input type="file" class="form-control own-form-input text-left @error('name') is-invalid @enderror" id="image" name="profile_image" onchange="validateImage()" required>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Criterio de exito</label>
-                            <input name="criterio" type="text"
-                                   class="form-control  @error('criterio') is-invalid @enderror"
-                                   placeholder="Ingresa el criterio de exito del proyecto" aria-label="criterio"
-                                   aria-describedby="basic-addon1" required autocomplete="criterio" autofocus
-                                   value={{Request::old('criterio')}}>
+                            <span class="pages-span">Nombre</span>
+                            <input type="text" class="form-control own-form-input text-left @error('name') is-invalid @enderror" id="name" name="name" required>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Gerencia</label>
-                            <select name="gerencia" type="text" class="custom-select  @error('gerencia') is-invalid @enderror" required>
-                                <option disabled selected>Seleccionar</option>
-                                @php($count=0)
-                                @foreach($gerencias as $item)
-                                    <option value="{{ $item->id }}">{{ $item->nombre}}</option>
-                                    @php($count++)
-                                @endforeach
-                                @if($count ==0)
-                                    <option disabled selected>No hay gerencias</option>
-                                @endif
-                            </select>
+                            <span class="pages-span">Apellidos</span>
+                            <input type="text" class="form-control own-form-input text-left @error('last_name') is-invalid @enderror" id="last_name" name="last_name" required>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Área</label>
-                            <select name="area" type="text" class="custom-select  @error('area') is-invalid @enderror" required>
-                                <option disabled selected>Seleccionar</option>
-                                @php($count=0)
-                                @foreach($areas as $item)
-                                    <option value="{{ $item->id }}">{{ $item->descripcion}}</option>
-                                    @php($count++)
-                                @endforeach
-                                @if($count ==0)
-                                    <option disabled selected>No hay áreas</option>
-                                @endif
-                            </select>
+                            <span class="pages-span">Fecha de Nacimiento</span>
+                            <input type="date" class="form-control own-form-input text-left @error('birth_date') is-invalid @enderror" id="birth_date" name="birth_date" required>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Fase</label>
-                            <select name="fase" type="text" class="custom-select  @error('fase') is-invalid @enderror" required>
-                                <option disabled selected>Seleccionar</option>
-                                @php($count=0)
-                                @foreach($fases as $item)
-                                    <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
-                                    @php($count++)
-                                @endforeach
-                                @if($count ==0)
-                                    <option disabled selected>No hay fases</option>
-                                @endif
-                            </select>
+                            <span class="pages-span">Fecha de Fallecimiento</span>
+                            <input type="date" class="form-control own-form-input text-left @error('passing_date') is-invalid @enderror" id="passing_date" name="passing_date" required>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Enfoque</label>
-                            <select name="enfoque" type="text" class="custom-select  @error('enfoque') is-invalid @enderror" required>
-                                <option disabled selected>Seleccionar</option>
-                                @php($count=0)
-                                @foreach($enfoques as $item)
-                                    <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
-                                    @php($count++)
-                                @endforeach
-                                @if($count ==0)
-                                    <option disabled selected>No hay enfoques</option>
-                                @endif
-                            </select>
+                            <span class="pages-span">Nombre en Enlace (debe ser único)</span>
+                            <input type="text" placeholder="Sin espacios o caracteres especiales" class="form-control own-form-input text-left @error('url_qr') is-invalid @enderror" id="url_qr" name="url_qr" onkeydown="return /[0-9a-zA-Z-_]/i.test(event.key)" required>
                         </div>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Trabajo</label>
-                            <select name="trabajo" type="text" class="custom-select  @error('trabajo') is-invalid @enderror" required>
-                                <option disabled selected>Seleccionar</option>
-                                @php($count=0)
-                                @foreach($trabajos as $item)
-                                    <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
-                                    @php($count++)
-                                @endforeach
-                                @if($count ==0)
-                                    <option disabled selected>No hay trabajos</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Indicador</label>
-                            <select name="indicador" type="text" class="custom-select  @error('indicador') is-invalid @enderror" required>
-                                <option disabled selected>Seleccionar</option>
-                                @php($count=0)
-                                @foreach($indicadores as $item)
-                                    <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
-                                    @php($count++)
-                                @endforeach
-                                @if($count ==0)
-                                    <option disabled selected>No hay indicadores</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Estado inicial del proyecto</label>
-                            <select name="estado" type="text" class="custom-select  @error('estado') is-invalid @enderror" required>
-                                <option disabled selected>Seleccionar</option>
-                                @php($count=0)
-                                @foreach($estados as $item)
-                                    <option value="{{ $item->id }}">{{ $item->estado }}</option>
-                                    @php($count++)
-                                @endforeach
-                                @if($count ==0)
-                                    <option disabled selected>No hay estados</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="material-icons">close</i>Cerrar</button>
-                <button type="submit" class="btn btn-primary"><i class="material-icons">check</i>Guardar</button>
+                <button type="button" class="btn close-btn" data-dismiss="modal"><i class="material-icons">close</i>Cerrar</button>
+                <button type="submit" class="btn save-btn"><i class="material-icons">check</i>Guardar</button>
             </div>
         </form>
     </div>
 </div>
+<script>
+    function validateImage() {
+        var formData = new FormData();
+        var file = document.getElementById('image').files[0];
+        formData.append("Filedata", file);
+        var t = file.type.split('/').pop().toLowerCase();
+        if (t !== "jpeg" && t !== "jpg" && t !== "png" && t !== "bmp" && t !== "gif") {
+            alert('Por favor selecciona un formato correcto');
+            document.getElementById('image').value = '';
+            return false;
+        }
+        return true;
+    }
+</script>

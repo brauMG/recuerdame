@@ -15,10 +15,9 @@ class CreatePostMentionsTable extends Migration
     {
         Schema::create('post_mentions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('id_post');
+            $table->foreignId('id_profile');
             $table->foreignId('id_user');
             $table->string('comment');
-            $table->string('reply_to')->nullable();
             $table->string('hide');
             $table->timestamps();
         });

@@ -77,10 +77,10 @@
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
-    @include('layouts.page_templates.auth')
+    @include('layouts.page_templates.auth-alt')
 @endauth
 @guest()
-    @include('layouts.page_templates.guest')
+    @include('layouts.page_templates.guest-alt')
 @endguest
 @stack('scripts')
 <script>

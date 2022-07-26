@@ -16,9 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('id_profile');
-            $table->boolean('active_mentions');
             $table->string('post_type');
-            $table->string('allow_mentions');
             $table->timestamps();
         });
     }

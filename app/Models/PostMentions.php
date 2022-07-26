@@ -15,10 +15,9 @@ class PostMentions extends Model
      * @var array
      */
     protected $fillable = [
-        'id_post',
+        'id_profile',
         'id_user',
         'comment',
-        'reply_to',
         'hide'
     ];
 
@@ -27,8 +26,8 @@ class PostMentions extends Model
     protected $primaryKey = 'id';
     public $timestamps = true;
 
-    public function post() {
-        return $this->belongsTo(Posts::class);
+    public function profile() {
+        return $this->belongsTo(Profiles::class);
     }
 
     public function user() {

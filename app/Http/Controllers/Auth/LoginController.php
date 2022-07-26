@@ -25,19 +25,7 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     public function redirectTo() {
-        $role = Auth::user()->user_type;
-        switch ($role) {
-            case '1':
-                return '/inicio-admin';
-                break;
-            case '2':
-                return '/inicio-seguidor';
-                break;
-
-            default:
-                return '/';
-                break;
-        }
+        return '/inicio-admin';
     }
 
     /**
@@ -57,11 +45,6 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        if ($user->user_type == 1) {
-            return redirect('/inicio-admin');
-        }
-        else {
-            return redirect('/inicio-seguidor');
-        }
+        return redirect('/inicio-admin');
     }
 }

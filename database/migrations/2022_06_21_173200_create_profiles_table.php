@@ -16,7 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('type');
-            $table->string('url_qr');
+            $table->string('url_qr')->unique();
             $table->string('profile_image');
             $table->string('cover_image')->nullable();
             $table->string('name');
@@ -25,8 +25,8 @@ class CreateProfilesTable extends Migration
             $table->string('birth_country')->nullable();
             $table->string('birth_city')->nullable();
             $table->string('birth_state')->nullable();
-            $table->dateTime('birth_date');
-            $table->dateTime('passing_date');
+            $table->date('birth_date');
+            $table->date('passing_date');
             $table->string('passing_location')->nullable();
             $table->string('languages')->nullable();
             $table->string('quotes')->nullable();
@@ -34,7 +34,6 @@ class CreateProfilesTable extends Migration
             $table->string('in_life')->nullable();
             $table->string('interest_facts')->nullable();
             $table->string('family_members')->nullable();
-            $table->string('marriage')->nullable();
             $table->string('allow_mentions');
             $table->timestamps();
         });
