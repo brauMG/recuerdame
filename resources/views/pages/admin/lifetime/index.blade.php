@@ -171,7 +171,7 @@
                                                 Sin Menciones
                                             </a>
                                         </td>
-                                    </tr>v
+                                    </tr>
 
                                     {{--end foreach--}}
                                     </tbody>

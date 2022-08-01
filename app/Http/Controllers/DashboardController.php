@@ -62,7 +62,7 @@ class DashboardController extends Controller
             'type' => ['required'],
             'url_qr' => 'unique:profiles,url_qr',
             'allow_mentions' => ['required'],
-            'profile_image' => ['required|max:5000'],
+            'profile_image' => ['required', 'max:5000'],
             'name' => ['required'],
             'last_name' => ['required'],
             'birth_date' => ['required'],

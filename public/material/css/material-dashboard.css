@@ -14582,9 +14582,11 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   color: #a9afbb;
 }
 
-.sidebar .nav li.active>a,
-.sidebar .nav li.active>a i {
-  color: #fff;
+.sidebar .nav li.active>a, .sidebar .nav li.active>a i {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 
 .sidebar .nav li.separator {
@@ -14630,7 +14632,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   text-transform: capitalize;
   font-size: 13px;
   padding: 10px 15px;
-
+    font-weight: 400;
 }
 
 .sidebar .sidebar-background {
@@ -14756,13 +14758,13 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
 }
 
-.sidebar[data-color="reqrdame"] li.active>a {
-    background: linear-gradient(60deg, #7ecaff , #7ecaff);
-    box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(237 246 254);
-    width: fit-content;
-    margin: auto;
-    border-radius: 15px;
-}
+/*.sidebar[data-color="reqrdame"] li.active>a {*/
+/*    background: linear-gradient(60deg, #7ecaff , #7ecaff);*/
+/*    box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(237 246 254);*/
+/*    width: fit-content;*/
+/*    margin: auto;*/
+/*    border-radius: 15px;*/
+/*}*/
 
 .sidebar .nav li a i {
     color: #323232c4 !important;

@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/actualizar-perfil-actual/{id}',[DashboardController::class, 'manage'])->name('ManageProfile');
     // profile information
     Route::get('/informacion',[ProfileController::class, 'index']);
+    Route::get('/comprobando',[ProfileController::class, 'not_selected']);
     Route::put('/informacion-actualizar/{id}',[ProfileController::class, 'update'])->name('UpdateInformation');
     // mentions information
     Route::get('/menciones',[PostMentionsController::class, 'index']);
@@ -44,4 +45,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 // profile information
-Route::get('/perfil',[ProfileController::class, 'view']);
+Route::get('/{url_qr}',[ProfileController::class, 'view']);

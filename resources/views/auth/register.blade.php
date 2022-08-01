@@ -45,7 +45,7 @@
                                     </div>
 
                                     <div class="form-flex-group mt-3">
-                                        <div class="half-input bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                        <div class="full-input bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                             <div class="input-group">
                                                 <input type="email" name="email" class="form-control login-input text-center font-weight-bold" placeholder="{{ __('Correo') }}" value="{{ old('email') }}" required>
                                             </div>

@@ -1,3 +1,4 @@
+@inject('url_qr', 'App\Services\GetProfileURL')
 <div class="sidebar alt-sidebar" data-color="reqrdame" data-background-color="purple">
     <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -9,43 +10,43 @@
     </div>
     <div class="sidebar-wrapper alt-sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item{{ $activePage == 'Tablero' ? ' active' : '' }}">
+            <li class="nav-alter nav-item">
                 <a class="nav-link" href="{{ url('/inicio-admin') }}">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/home.png"></i>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Perfil' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/perfil') }}">
+            <li id="mi-cuenta" class="nav-alter nav-item">
+                <a class="nav-link" @if($url_qr->get() !== '') href="{{ url('/'.$url_qr->get()) }}" @else href="{{ url('/comprobando') }}" @endif>
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/perfil.png"></i>
                 </a>
             </li>
 
-            <li class="nav-item{{ $activePage == 'Información' ? ' active' : '' }}">
+            <li class="nav-alter nav-item">
                 <a class="nav-link" href="{{ url('/informacion') }}" id="custom_link">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/configuracion.png"></i>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Menciones' ? ' active' : '' }}">
+            <li id="mi-cuenta" class="nav-alter nav-item">
                 <a class="nav-link" href="{{ url('/menciones') }}">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/menciones.png"></i>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Trayectoria' ? ' active' : '' }}">
+            <li id="mi-cuenta" class="nav-alter nav-item">
                 <a class="nav-link" href="{{ url('/trayectoria') }}">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/trayectoria.png"></i>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item{{ $activePage == 'Galeria' ? ' active' : '' }}">
+            <li id="mi-cuenta" class="nav-alter nav-item">
                 <a class="nav-link" href="{{ url('/galeria') }}">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/galeria.png"></i>
                 </a>
             </li>
 
-            <li id="mi-cuenta" class="nav-item">
+            <li id="mi-cuenta" class="nav-alter nav-item">
                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/cerrar.png"></i>
                 </a>

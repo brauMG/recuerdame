@@ -1,3 +1,4 @@
+@inject('url_qr', 'App\Services\GetProfileURL')
 <div class="sidebar" data-color="reqrdame" data-background-color="purple">
     <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -20,7 +21,7 @@
             </li>
 
             <li id="mi-cuenta" class="nav-item{{ $activePage == 'Perfil' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ url('/perfil') }}">
+                <a class="nav-link" @if($url_qr->get() !== '') href="{{ url('/'.$url_qr->get()) }}" @else href="{{ url('/comprobando') }}" @endif>
                     <i><img class="sidebar-icon" src="{{ asset('material') }}/img/perfil.png"></i>
                     <p class="sidebar-element-text">{{ __('Perfil') }}</p>
                 </a>

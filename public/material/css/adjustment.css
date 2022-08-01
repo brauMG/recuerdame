@@ -1,11 +1,13 @@
 @font-face {
     font-family: Josefin;
     src: url('../fonts/JosefinSans-VariableFont_wght.ttf');
+    font-weight: 100 1000;
 }
 
 body {
     font-family: Josefin, sans-serif !important;
     color: black;
+    font-weight: 300;
 }
 
 /*hide the mostrar from data tables*/
@@ -608,7 +610,7 @@ button, a {
 
 .pages-span {
     padding-left: 15px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 14px;
 }
 
@@ -628,6 +630,7 @@ button, a {
 .cover-pic {
     width: -webkit-fill-available;
     max-height: 295px;
+    object-fit: cover;
 }
 
 .btn-delete-cover {
@@ -700,6 +703,10 @@ button, a {
     position: relative;
 }
 
+.card-img-icon {
+    cursor: pointer;
+}
+
 .own-form-input {
     padding: 20px 5% 20px 5%;
     font-size: 14px !important;
@@ -711,6 +718,7 @@ button, a {
     color: #868686;
     box-shadow: 0 0px 0px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 0px 0px -5px rgb(0 0 0 / 20%) !important;
     margin-top: 1%;
+    font-weight: 300;
 }
 
 .form-check-social {
@@ -1069,21 +1077,25 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
 }
 
 .alt-sidebar {
-    width: 90px;
+    width: 173px;
     box-shadow: unset;
     background: #fff2fa;
 }
 
 .alt-sidebar_logo {
-    width: 50px;
+    width: 85px;
 }
 
 .sidebar .alt-sidebar-wrapper {
-    width: 90px;
+    width: 173px;
 }
 
 .alt-sidebar-icon {
-    width: 18px;
+    width: 30px;
+}
+
+.nav-alter {
+    margin: 25px 15px;
 }
 
 .alt-sidebar .nav li a, .sidebar .nav li .dropdown-menu a {
@@ -1097,8 +1109,10 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
 }
 
 .alt-main-panel {
-    width: calc(100% - 90px);
+    width: calc(100% - 173px);
     background-color: white;
+    height: unset !important;
+    max-height: unset !important;
 }
 
 .alt-navbar {
@@ -1114,6 +1128,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
 .session-options {
     font-size: 14px;
     margin: 0 1%;
+    font-weight: 400;
 }
 
 .main-panel>.content-profile-1 {
@@ -1125,7 +1140,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
 .container-cover-1 {
     display: block;
     width: 100%;
-    height: 280px;
+    height: 415px;
 }
 
 .container-main-1 {
@@ -1133,7 +1148,6 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
     width: 100%;
     flex-wrap: wrap;
     align-items: end;
-    margin: 0 1%;
 }
 
 .container-info-1 {
@@ -1149,32 +1163,34 @@ img.pic-1 {
     width: 100%;
     height: 300px;
     border-radius: 65px;
-    margin: 0 0 0 3%;
+    margin: 0 0 0 20%;
     object-fit: cover;
 }
 
 .profile-name {
-    margin: 5% 0 0 0;
+    margin: 5% 0 0 8%;
     font-size: 30px;
+    font-weight: 300;
 }
 
 .strong {
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .container-element-1 {
     text-align: center;
-    width: 10%;
+    width: 12%;
+    cursor: pointer;
 }
 
 .container-empty-element-1 {
     text-align: center;
-    width: 7.5%;
+    width: 5%;
 }
 
 .element-text {
     margin-bottom: 1.5%;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.5em;
 }
 
@@ -1246,6 +1262,10 @@ img.cover-1 {
 
 input {
     font-family: 'Josefin', sans-serif;
+}
+
+.full-input {
+    width: 95%;
 }
 
 .save-btn {
@@ -1329,6 +1349,130 @@ input {
 .link-decoration {
     color: #7ecaff;
     text-decoration: underline;
+    text-underline-position: under;
+}
+
+div#table_info {
+    font-weight: 400;
+}
+
+li#table_previous {
+    font-weight: 400;
+}
+
+li#table_next {
+    font-weight: 400;
+}
+
+select.custom-select.custom-select-sm.form-control.form-control-sm {
+    font-family: 'Josefin', sans-serif;
+    font-weight: 400;
+}
+
+/*tabs from type 1 profile*/
+.container--tabs {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.container--tabs .tab {
+    min-height: 2em;
+    padding: 1em;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: background-color 0.25s;
+}
+.container--tabs .tab:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color 0.25s;
+    color: white;
+}
+.container--tabs .tabs--active {
+    background-color: #fff;
+    color: black;
+    pointer-events: none;
+}
+
+.content-tab {
+    display: none;
+}
+
+.content--active {
+    display: block;
+}
+
+.feed-tab {
+    padding: 3% 0 0 15%;
+    display: flex;
+}
+
+.bio-tab {
+    padding: 5% 5% 5% 5%;
+}
+
+.mentions-tab {
+    padding: 5% 5% 5% 5%;
+}
+
+.gallery-tab {
+    padding: 5% 5% 5% 5%;
+}
+
+.post-description {
+    margin: 11px 0;
+}
+
+.line-wrapper {
+    width: 5%;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 80px;
+    color: #006300;
+}
+.post-wrapper {
+    width: 60%;
+    padding: 12px 0;
+}
+
+.post-title {
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.post-metadata {
+    font-size: 12px;
+    color: #90949C;
+}
+
+.img-content {
+    width: 100%;
+    margin-bottom: 11px;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+
+/*fonts*/
+h3.title-page {
+    font-weight: 400;
+}
+h4.card-title.social-card-title.poppings-font-bold {
+    font-weight: 400;
+}
+p.card-category {
+    font-weight: 300;
+}
+button.social-card-btn.poppings-font {
+    font-weight: 500;
+}
+h5#exampleModalLabel {
+    font-weight: 400;
 }
 
 /*for laptop*/
@@ -1355,11 +1499,11 @@ input {
     }
     .nav-open .alt-main-panel, .nav-open .wrapper-full-page, .nav-open .navbar .container .navbar-toggler, .nav-open .navbar .container .navbar-wrapper, .nav-open .navbar .container {
         left: 0;
-        -webkit-transform: translate3d(-90px, 0, 0);
-        -moz-transform: translate3d(-90px, 0, 0);
-        -o-transform: translate3d(-90px, 0, 0);
-        -ms-transform: translate3d(-90px, 0, 0);
-        transform: translate3d(-90px, 0, 0);
+        -webkit-transform: translate3d(-173px, 0, 0);
+        -moz-transform: translate3d(-173px, 0, 0);
+        -o-transform: translate3d(-173px, 0, 0);
+        -ms-transform: translate3d(-173px, 0, 0);
+        transform: translate3d(-173px, 0, 0);
     }
 }
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profiles;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use function Composer\Autoload\includeFile;
 
 class ProfileController extends Controller
 {
@@ -12,13 +14,13 @@ class ProfileController extends Controller
         if(Auth::user()->current_profile === null) {
             return redirect('/inicio-admin')->with('mensaje-error', 'Primero debes seleccionar un perfil');
         }
-        else {
-            $profile_id = Auth::user()->current_profile;
 
-            $profile = Profiles::find($profile_id);
+        $profile_id = Auth::user()->current_profile;
 
-            return view('pages.admin.information.index', compact('profile'));
-        }
+        $profile = Profiles::find($profile_id);
+
+        return view('pages.admin.information.index', compact('profile'));
+
     }
 
     public function update(Request $request, $id) {
@@ -103,7 +105,42 @@ class ProfileController extends Controller
         return redirect('/informacion')->with('mensaje', 'Perfil actualizado exitosamente');
     }
 
-    public function view() {
-        return view('pages.admin.profile.index-1');
+    public function view($url_qr) {
+        if (Auth::check()) {
+            if (Auth::user()->current_profile === null ) {
+                return redirect('/inicio-admin')->with('mensaje-error', 'Primero debes seleccionar un perfil');
+            } else {
+                $profile = Profiles::where('url_qr', $url_qr)->first();
+                switch ($profile->type) {
+                    case 1:
+                        return view('pages.admin.profile.index-1', compact('profile'));
+                        break;
+                    case 2:
+                        return view('pages.admin.profile.index-2', compact('profile'));
+                        break;
+                    case 3:
+                        return view('pages.admin.profile.index-3', compact('profile'));
+                        break;
+                }
+            }
+        }
+        else {
+            $profile = Profiles::where('url_qr', $url_qr)->first();
+            switch ($profile->type) {
+                case 1:
+                    return view('pages.admin.profile.index-1', compact('profile'));
+                    break;
+                case 2:
+                    return view('pages.admin.profile.index-2', compact('profile'));
+                    break;
+                case 3:
+                    return view('pages.admin.profile.index-3', compact('profile'));
+                    break;
+            }
+        }
+    }
+
+    public function not_selected() {
+        return redirect('/inicio-admin')->with('mensaje-error', 'Primero debes seleccionar un perfil');
     }
 }
