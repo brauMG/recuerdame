@@ -10,7 +10,6 @@ body {
     font-weight: 300;
 }
 
-/*hide the mostrar from data tables*/
 .dataTables_length {
     float: right;
 }
@@ -132,6 +131,30 @@ body {
 .charts-list-scroll {
     overflow: auto;
     max-height: 35vh;
+}
+
+.sidebar-wrapper::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.container-reqr::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.perfect-scrollbar-on::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.container-reqr-profile::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.container-reqr-mentions::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.modal-open .modal::-webkit-scrollbar {
+    width: 0 !important
 }
 
 .charts-table {
@@ -620,8 +643,8 @@ button, a {
 
 .profile-pic {
     width: -webkit-fill-available;
-    max-height: 400px;
-    height: 400px;
+    max-height: 510px;
+    height: 510px;
     border-radius: 90px;
     object-fit: cover;
     object-position: center;
@@ -629,7 +652,7 @@ button, a {
 
 .cover-pic {
     width: -webkit-fill-available;
-    max-height: 295px;
+    max-height: 380px;
     object-fit: cover;
 }
 
@@ -926,7 +949,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
     flex-wrap: wrap;
     justify-content: center;
     height: calc(100vh - 150px);
-    align-items: center;
+    align-items: baseline;
 }
 
 .flex-cards-profile {
@@ -939,9 +962,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
 }
 
 .add-column {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-self: center;
 }
 
 .gap {
@@ -960,7 +981,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
 .container-reqr-profile {
     overflow: auto;
     height: calc(100vh - 200px);
-    padding: 1% 3%;
+    padding: 0% 3%;
     background-color: transparent;
     border-radius: 25px;
     box-shadow: 0 0px 0px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%) !important;
@@ -988,18 +1009,34 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
 }
 
 .adaptative-col {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .outer-column-left {
     width: 60%;
     height: inherit;
+    max-height: inherit;
+    overflow: auto;
+    padding: 0 15px 0 5px;
 }
 
 .outer-column-right {
     width: 40%;
     height: inherit;
+    max-height: inherit;
+    overflow: auto;
+    padding: 0 15px 0 5px;
+}
+
+.outer-column-right::-webkit-scrollbar {
+    width: 0;
+}
+
+.outer-column-left::-webkit-scrollbar {
+    width: 0;
 }
 
 .inner-flex {
@@ -1135,6 +1172,10 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-
     margin-top: 45px;
     padding: unset;
     min-height: calc(100vh - 45px);
+}
+
+.cover-container {
+    margin-top: 1%;
 }
 
 .container-cover-1 {
@@ -1305,11 +1346,13 @@ input {
 }
 
 .option-title {
-    width: 30%;
+    width: 40%;
 }
 
 .option-mentions {
-    width: 18%;
+    width: 30%;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .option-save {
@@ -1410,19 +1453,23 @@ select.custom-select.custom-select-sm.form-control.form-control-sm {
 .feed-tab {
     padding: 3% 0 0 15%;
     display: flex;
+    flex-direction: column;
 }
 
 .bio-tab {
-    padding: 5% 5% 5% 5%;
-}
+    padding: 3% 0 0 15%;
+    display: flex;
+    flex-direction: column;}
 
 .mentions-tab {
-    padding: 5% 5% 5% 5%;
-}
+    padding: 3% 0 0 15%;
+    display: flex;
+    flex-direction: column;}
 
 .gallery-tab {
-    padding: 5% 5% 5% 5%;
-}
+    padding: 3% 0 0 15%;
+    display: flex;
+    flex-direction: column;}
 
 .post-description {
     margin: 11px 0;
@@ -1475,11 +1522,26 @@ h5#exampleModalLabel {
     font-weight: 400;
 }
 
+.post-container {
+    width: 100%;
+    display: flex;
+}
+
 /*for laptop*/
 @media (max-width: 1400px) {
     .adaptative-col {
         flex: 0 0 33.3%;
         max-width: 33.3%;
+    }
+    .flex-cards {
+        align-items: center;
+    }
+    .cover-pic {
+        max-height: 287px;
+    }
+    .profile-pic {
+        max-height: 360px;
+        height: 360px;
     }
 }
 
@@ -1504,6 +1566,12 @@ h5#exampleModalLabel {
         -o-transform: translate3d(-173px, 0, 0);
         -ms-transform: translate3d(-173px, 0, 0);
         transform: translate3d(-173px, 0, 0);
+    }
+    .link-decoration {
+        font-size: 12px;
+    }
+    .pages-span {
+        font-size: 12px;
     }
 }
 
@@ -1551,5 +1619,75 @@ h5#exampleModalLabel {
     .row {
         margin-right: 0;
         margin-left: 0;
+    }
+    .default-card {
+        max-width: 100%;
+        margin: auto;
+    }
+    .default-select-image {
+        width: -webkit-fill-available;
+    }
+    .footer-bar {
+        padding: 0 25px 0 25px;
+        font-size: 10px;
+    }
+    .message-container-alert {
+        top: 33px;
+        width: 75%;
+        z-index: 9;
+    }
+    .message-container-success {
+        top: 33px;
+        width: 75%;
+        z-index: 9;
+    }
+    .message-container-warning {
+        top: 33px;
+        width: 75%;
+        z-index: 9;
+    }
+    .container-reqr-profile {
+        padding: 0% 5%;
+    }
+    .outer-column-left {
+        width: 100%;
+        overflow: unset;
+        padding: unset;
+    }
+    .outer-column-right {
+        width: 100%;
+        overflow: unset;
+        padding: unset;
+    }
+    .inner-column-left {
+        width: 100%;
+    }
+    .inner-column-right {
+        width: 100%;
+    }
+    .profile-container {
+        margin: -30% 0 0 0;
+    }
+    .flex-cards-profile {
+        height: unset;
+    }
+    .inputs-container {
+        margin: unset;
+    }
+    .inner-inputs-container {
+        margin: unset;
+    }
+    .with-options {
+        flex-wrap: wrap;
+    }
+    .option-title {
+        width: 100%;
+        margin: unset;
+    }
+    .option-mentions {
+        width: 33%;
+    }
+    .option-save {
+        width: 33%;
     }
 }

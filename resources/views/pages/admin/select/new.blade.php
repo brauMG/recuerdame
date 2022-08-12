@@ -14,12 +14,12 @@
                     <input type="hidden" name="type" value="1">
                     <input type="hidden" name="allow_mentions" value="1">
 
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <span class="pages-span">Foto de Perfil</span>
-                            <input type="file" class="form-control own-form-input text-left @error('name') is-invalid @enderror" id="image" name="profile_image" onchange="validateImage()" required>
-                        </div>
-                    </div>
+{{--                    <div class="col-md-12">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <span class="pages-span">Foto de Perfil</span>--}}
+{{--                            <input type="file" class="form-control own-form-input text-left @error('name') is-invalid @enderror" id="image" name="profile_image" onchange="validateImage()" required>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <div class="col-md-12">
                         <div class="form-group">
@@ -66,17 +66,17 @@
         </form>
     </div>
 </div>
-<script>
-    function validateImage() {
-        var formData = new FormData();
-        var file = document.getElementById('image').files[0];
-        formData.append("Filedata", file);
-        var t = file.type.split('/').pop().toLowerCase();
-        if (t !== "jpeg" && t !== "jpg" && t !== "png" && t !== "bmp" && t !== "gif") {
-            alert('Por favor selecciona un formato correcto');
-            document.getElementById('image').value = '';
-            return false;
-        }
-        return true;
-    }
-</script>
+{{--<script>--}}
+{{--    function validateImage() {--}}
+{{--        var formData = new FormData();--}}
+{{--        var file = document.getElementById('image').files[0];--}}
+{{--        formData.append("Filedata", file);--}}
+{{--        var t = file.type.split('/').pop().toLowerCase();--}}
+{{--        if (t !== "jpeg" && t !== "jpg" && t !== "png" && t !== "bmp" && t !== "gif") {--}}
+{{--            alert('Por favor selecciona un formato correcto');--}}
+{{--            document.getElementById('image').value = '';--}}
+{{--            return false;--}}
+{{--        }--}}
+{{--        return true;--}}
+{{--    }--}}
+{{--</script>--}}

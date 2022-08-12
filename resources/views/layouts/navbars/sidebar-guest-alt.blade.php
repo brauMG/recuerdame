@@ -9,33 +9,25 @@
     </div>
     <div class="sidebar-wrapper alt-sidebar-wrapper">
         <ul class="nav">
-            <li id="mi-cuenta" class="nav-alter nav-item">
-                <a class="nav-link" href="/">
-                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/home.png"></i>
-                </a>
-            </li>
 
             <li id="mi-cuenta" class="nav-alter nav-item">
                 <a class="nav-link" href="/">
-                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/perfil.png"></i>
+                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/home.png"></i>
+                    <p class="sidebar-element-text">{{ __('ReQRdame') }}</p>
                 </a>
             </li>
 
             <li id="mi-cuenta" class="nav-alter nav-item">
                 <a class="nav-link" href="/">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/archivo.png"></i>
+                    <p class="sidebar-element-text">{{ __('Políticas') }}</p>
                 </a>
             </li>
 
             <li id="mi-cuenta" class="nav-alter nav-item">
                 <a class="nav-link" href="/">
                     <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/contacto.png"></i>
-                </a>
-            </li>
-
-            <li id="mi-cuenta" class="nav-alter nav-item">
-                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    <i><img class="sidebar-icon alt-sidebar-icon" src="{{ asset('material') }}/img/cerrar.png"></i>
+                    <p class="sidebar-element-text">{{ __('Contacto') }}</p>
                 </a>
             </li>
 

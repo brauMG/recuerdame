@@ -20,6 +20,7 @@ class Media extends Model
         'media_description',
         'media_date',
         'media_location',
+        'in_gallery',
     ];
 
     protected $guarded = ['id'];

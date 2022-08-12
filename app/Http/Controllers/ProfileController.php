@@ -62,7 +62,7 @@ class ProfileController extends Controller
             }
         }
 
-        //assign requestes values from form to variables
+        //assign requested values from form to variables
         $allow_mentions = $request->allow_mentions;
         $name = $request->name;
         $last_name = $request->last_name;
@@ -80,7 +80,7 @@ class ProfileController extends Controller
         $interest_facts = $request->interest_facts;
         $languages = $request->languages;
 
-        //assign variables values to profile data
+        //assign variables values to db profile data
         $profile->allow_mentions = $allow_mentions;
         $profile->name = $name;
         $profile->last_name = $last_name;
@@ -108,7 +108,7 @@ class ProfileController extends Controller
     public function view($url_qr) {
         if (Auth::check()) {
             if (Auth::user()->current_profile === null ) {
-                return redirect('/inicio-admin')->with('mensaje-error', 'Primero debes seleccionar un perfil');
+                return redirect('/inicio-admin');
             } else {
                 $profile = Profiles::where('url_qr', $url_qr)->first();
                 switch ($profile->type) {

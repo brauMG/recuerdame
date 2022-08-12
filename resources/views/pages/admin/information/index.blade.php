@@ -16,14 +16,6 @@
                     </select>
                 </div>
                 <div class="form-group option-mentions">
-                    <span class="pages-span">Diseño</span> <a href="/preview-profiles/{{$profile->type}}.png" id="style_preview" class="link-decoration" target="_blank">(Vista Previa)</a>
-                    <select name="type" id="type" class="form-control own-form-input own-select text-left" onchange="setLink()" required>
-                        <option class="custom-select" value="1" @if($profile->type === '1') selected @endif>Diseño 1</option>
-                        <option class="custom-select" value="2" @if($profile->type === '2') selected @endif>Diseño 2</option>
-                        <option class="custom-select" value="3" @if($profile->type === '3') selected @endif>Diseño 3</option>
-                    </select>
-                </div>
-                <div class="form-group option-mentions">
                     <span class="pages-span">Menciones</span>
                     <select name="allow_mentions" id="allow_mentions" class="form-control own-form-input own-select text-left" required>
                         <option class="custom-select" value="0" @if($profile->allow_mentions === '0') selected @endif>Bloqueadas</option>
@@ -84,12 +76,12 @@
                                 <div class="img-changer-container">
                                     <h6 id="new-cover" class="new-cover-pic-msg" style="display: none">Imagen Seleccionada, Presionar Guardar Para realizar el cambio</h6>
                                     @if($profile->cover_image === null)
-                                        <img class="cover-pic" src="{{ URL('/') }}/cover-pictures/cover.png">
+                                        <img class="cover-pic" src="{{ URL('/') }}/material/default-pictures/cover.png">
                                         <button clave="id" onclick="document.getElementById('image-cover').click()" type="button" rel="tooltip" class="btn btn-sm btn-adjust btn-edit-cover">
                                             <i class="material-icons-outlined">edit</i>
                                         </button>
                                     @else
-                                        <img class="cover-pic" src="{{ URL('/') }}/cover-pictures/{{$profile->cover_image}}">
+                                        <img class="cover-pic" src="{{ URL('/') }}/user-media/{{$profile->url_qr}}/cover-picture/{{$profile->cover_image}}">
                                         <button clave="id" onclick="document.getElementById('image-cover').click()" type="button" rel="tooltip" class="btn btn-sm btn-adjust btn-edit-cover">
                                             <i class="material-icons-outlined">edit</i>
                                         </button>
@@ -104,7 +96,11 @@
                                     <div class="profile-container">
                                         <div class="img-changer-container">
                                             <h6 id="new-profile" class="new-profile-pic-msg" style="display: none">Imagen Seleccionada, Presionar Guardar Para realizar el cambio</h6>
-                                            <img class="profile-pic" src="{{ URL('/') }}/profile-pictures/{{$profile->profile_image}}">
+                                            @if($profile->profile_image === null)
+                                                <img class="profile-pic" src="{{ URL::to('/') }}/material/default-pictures/profile.png">
+                                            @else
+                                                <img class="profile-pic" src="{{ URL('/') }}/user-media/{{$profile->url_qr}}/profile-picture/{{$profile->profile_image}}">
+                                            @endif
                                             <button clave="id" onclick="document.getElementById('image-profile').click()" type="button" rel="tooltip" class="btn btn-sm btn-adjust btn-edit-profile">
                                                 <i class="material-icons-outlined">edit</i>
                                             </button>
@@ -113,21 +109,13 @@
                                             <input type="file" id="image-profile" name="profile_image" onchange="validateImageProfile()" style="display: none"/>
                                         </div>
                                     </div>
-                                    <div class="form-group down-pic">
-                                        <span class="pages-span">Nombre en Enlace (debe ser único)</span>
-                                        <input type="text" placeholder="Sin espacios o caracteres especiales" value="{{$profile->url_qr}}" class="form-control own-form-input text-left @error('url_qr') is-invalid @enderror" id="url_qr" name="url_qr" onkeydown="return /[0-9a-zA-Z-_]/i.test(event.key)" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <span class="pages-span">Idiomas hablados</span>
-                                        <input type="text" class="form-control own-form-input text-left" id="languages" name="languages" value="{{$profile->languages}}">
-                                    </div>
-                                    <div class="form-group">
-                                        <span class="pages-span">Citas</span>
-                                        <textarea rows="2" class="form-control own-form-input text-left " id="quotes" name="quotes">{{$profile->hobbies}}</textarea>
-                                    </div>
                                 </div>
                                 <div class="inner-column-right">
                                     <div class="inner-inputs-container">
+                                        <div class="form-group">
+                                            <span class="pages-span">Nombre en Enlace</span>
+                                            <input type="text" placeholder="Sin espacios o caracteres especiales" value="{{$profile->url_qr}}" class="form-control own-form-input text-left @error('url_qr') is-invalid @enderror" id="url_qr" name="url_qr" onkeydown="return /[0-9a-zA-Z-_]/i.test(event.key)" required>
+                                        </div>
                                         <div class="form-group">
                                             <span class="pages-span">Nombre</span>
                                             <input type="text" class="form-control own-form-input text-left " id="name" name="name" value="{{$profile->name}}" required>
@@ -149,8 +137,12 @@
                                             <input type="text" class="form-control own-form-input text-left" id="birth_state" name="birth_state" value="{{$profile->birth_state}}">
                                         </div>
                                         <div class="form-group">
-                                            <span class="pages-span">Familiares</span>
-                                            <textarea rows="2" class="form-control own-form-input text-left " id="family_members" name="family_members">{{$profile->family_members}}</textarea>
+                                            <span class="pages-span">Lugar donde fallecio</span>
+                                            <input type="text" class="form-control own-form-input text-left" id="passing_location" name="passing_location" value="{{$profile->passing_location}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="pages-span">Idiomas hablados</span>
+                                            <input type="text" class="form-control own-form-input text-left" id="languages" name="languages" value="{{$profile->languages}}">
                                         </div>
                                     </div>
                                 </div>
@@ -160,6 +152,14 @@
                         <div class="outer-column-right">
                             <div class="inputs-container">
                                 <div class="form-group initial-right">
+                                    <span class="pages-span">Diseño del Perfil</span> <a href="/preview-profiles/{{$profile->type}}.png" id="style_preview" class="link-decoration" target="_blank">(Vista Previa)</a>
+                                    <select name="type" id="type" class="form-control own-form-input own-select text-left" onchange="setLink()" required>
+                                        <option class="custom-select" value="1" @if($profile->type === '1') selected @endif>Diseño 1</option>
+                                        <option class="custom-select" value="2" @if($profile->type === '2') selected @endif>Diseño 2</option>
+                                        <option class="custom-select" value="3" @if($profile->type === '3') selected @endif>Diseño 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <span class="pages-span">En vida fue</span>
                                     <textarea rows="5" class="form-control own-form-input text-left " id="in_life" name="in_life">{{$profile->in_life}}</textarea>
                                 </div>
@@ -176,12 +176,16 @@
                                     <input type="date" class="form-control own-form-input text-left" id="passing_date" name="passing_date" value="{{$profile->passing_date}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <span class="pages-span">Lugar donde fallecio</span>
-                                    <input type="text" class="form-control own-form-input text-left" id="passing_location" name="passing_location" value="{{$profile->passing_location}}">
+                                    <span class="pages-span">Familiares</span>
+                                    <textarea rows="3" class="form-control own-form-input text-left " id="family_members" name="family_members">{{$profile->family_members}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <span class="pages-span">Citas</span>
+                                    <textarea rows="3" class="form-control own-form-input text-left " id="quotes" name="quotes">{{$profile->hobbies}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <span class="pages-span">Datos interesantes</span>
-                                    <textarea rows="6" class="form-control own-form-input text-left " id="interest_facts" name="interest_facts">{{$profile->interest_facts}}</textarea>
+                                    <textarea rows="3" class="form-control own-form-input text-left " id="interest_facts" name="interest_facts">{{$profile->interest_facts}}</textarea>
                                 </div>
                             </div>
                         </div>

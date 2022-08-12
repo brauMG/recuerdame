@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('type');
             $table->string('url_qr')->unique();
-            $table->string('profile_image');
+            $table->string('profile_image')->nullable();;
             $table->string('cover_image')->nullable();
             $table->string('name');
             $table->string('last_name');

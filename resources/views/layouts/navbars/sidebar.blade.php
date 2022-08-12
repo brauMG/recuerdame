@@ -30,7 +30,7 @@
             <li class="nav-item{{ $activePage == 'Información' ? ' active' : '' }}">
                 <a class="nav-link" href="{{ url('/informacion') }}" id="custom_link">
                     <i><img class="sidebar-icon" src="{{ asset('material') }}/img/configuracion.png"></i>
-                    <p class="sidebar-element-text">{{ __('Información') }}</p>
+                    <p class="sidebar-element-text">{{ __('Personalizar') }}</p>
                 </a>
             </li>
 

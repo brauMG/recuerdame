@@ -1,0 +1,127 @@
+a) La creación del perfil
+
+Al intentar crear un perfil se le pedirá al usuario comprar la suscripción (punto F)
+
+0. Reestructurar almacenamiento de imágenes a una carpeta por usuario, esto con el fin de tener organizadas las galerías e imágenes de perfil y portada
+
+1. Al crear el perfil, llevar al usuario al paso 1 de personalización
+
+2. Agregar imagen por default al perfil al momento de su creación
+
+3. Paso 1. Seleccionar uno de los diseños disponibles para la vista del perfil e indicar si las menciones estarán habilitadas
+
+4. El paso 2 de personalización es seleccionar una imagen de perfil, se puede hacer cropping a la imagen y con json mirar el cambio al instante.
+
+Es obligatorio, continúa al paso 3
+
+5. Paso 3, mismo que el paso 2 pero para la imagen de portada y se puede omitir.
+
+6. Paso 4, detalles sobre su persona: citas (quotes), sus hobbies, que hizo en vida, hechos interesantes, idiomas hablados. Con skip.
+
+7. Paso 5. Galería, para agregar imágenes, videos y audios a la galería desde este paso, de forma masiva. Tiene skip
+
+8. Paso 6. Preguntas adicionales, es una lista enorme de preguntas, opcionales
+
+9. Al terminar el paso 6, enviar al usuario a la pantalla de eventos y trayectoria. Con un mensaje descriptivo sobre cómo funciona esta sección
+
+10. Agregar los pasos en un submenú desplegable dentro de "Personalizar"
+
+11. Dentro de personalizar, agregar también el cropping al editar imágenes
+
+12. Dentro de personalizar, agregar la lista de preguntas del punto 8
+
+13. Cuando esté implementada la pasarela de pago, añadir al modal de creación los campos necesarios de domicilio y un mensaje sobre los detalles de la compra y envió
+
+
+
+b) Los eventos de la trayectoria (admin)
+
+1. Crear vista con base en el diseño de Mez
+
+2. La creación de evento contiene los campos, título, descripción, fecha y ubicación
+
+3. Si quiere agregar algún archivo o incrustar un video, el usuario debe seleccionar un opción:
+
+imagen individual, álbum de imágenes, archivo de audio, enlace de video, otro tipo de archivo (descargar)
+
+4. Con base en la opción seleccionada habilitar/mostrar los campos correspondientes a cada opción
+
+    • imagen: input file con preview (validar imagen)
+
+    • álbum: drag and drop para las imágenes (validar imágenes)
+
+    • archivo de audio: input file de audio (validar el audio)
+
+    • enlace de video: select para indicar el proveedor (youtube, vimeo, etc), input field para ingresar el enlace (validar el enlace con base en el proveedor)
+
+    • otros: input file (estos archivos son descargables)
+
+Todos estos archivos son guardados en la carpeta de galería del usuario, y automáticamente se deben mostrar en ella
+
+5. Editar eliminar los archivos anteriores
+
+6. Eliminar... elimina, pedir confirmación y advertir con algún popup
+
+
+
+c) Las menciones (admin)
+
+1. Crear vista con base en el diseño de Mez
+
+2. Este módulo sirve para ver, permitir o bloquear las publicaciones de los demás usuarios en este perfil
+
+3. Opción para eliminar por completo una publicación
+
+
+
+d) La galería (admin)
+
+1. Crear vista
+
+2. Al seleccionar algún elemento este se amplía para mejor visualización
+
+3. En esta ventana de ampliación debe venir una opción para eliminar de la galería
+
+4. Al querer eliminar, si el sistema detecta que el archivo pertenece a un evento, le pedirá avisará al usuario y pedirá confirmación para eliminar el evento
+
+5. Opción para agregar elementos a la galería (single o bulk)
+
+
+
+e) Perfil (usuario)
+
+1. El diseño debe ser el que selecciono el usuario en el punto a3 o en la pantalla de personalización, se valida desde el controlador que diseño se implementará
+
+2. Tab de trayectoria: en esta pestaña se muestran los eventos que haya agregado el usuario, si no hay ninguno se debe ocultar y activar la tab de Bio
+
+3. Tab de Bio: aquí se muestran los datos colocados en el punto a4 y más abajo las preguntas del punto a6, los campos sin responder no se mostrarán
+
+4. Tab de Menciones: en este apartado el usuario guest puede publicar en el perfil, está limitado a ingresar un campo de texto. Pedirá al usuario ingresar sesión
+
+5. Tab de galería: donde se muestran todos los archivos multimedia agregados al perfil, con paginación, ampliación y filtros según el tipo de archivo
+
+6. Si el usuario al que pertenece el perfil no ha realizado su pago, no mostrar el perfil, en su lugar mostrar una pantalla con su respectivo mensaje de bloqueo
+
+
+
+f) Requisitos de la pasarela de pago en Paypal y Mercadopago
+
+0. Hacer los cambios necesarios a la base de datos para dar soporte a pagos por suscripciones
+
+1. La suscripción es de 99 pesos MXN mes por mes, o 948 pesos MXN si el pago es anual
+
+2. Cada suscripción debe estar vinculada a un perfil, por lo que no se pagan juntas. Por ejemplo, la suscripción del perfil 1 expira el 3 de mayo y la del perfil 2 el 18 de mayo.
+
+3. Opción para renovar automáticamente por cada suscripción
+
+4. Los requisitos para procesar el formulario de pago son, los datos obligatorios del perfil y los datos de domicilio del cliente
+
+5. Al momento del pago, notificar al administrador vía email sobre los detalles de la compra, de igual forma enviar email de confirmación al cliente.
+
+
+
+g) Pantalla de perfiles (admin)
+
+1. Añadir botón a perfiles ‘detalles de suscripción”
+
+2. Dentro de detalles de suscripción, el cliente podrá ver los datos de facturación y expiración, activar la renovación automática o cancelar la suscripción

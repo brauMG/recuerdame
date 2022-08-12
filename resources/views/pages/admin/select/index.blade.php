@@ -56,7 +56,7 @@
                             <div class="card card-stats card-social card-reqr default-card">
                                 <div class="card-header card-header-info card-header-icon">
                                     <div style="text-align: center">
-                                        <img class="default-select-image" src="{{ URL::to('/') }}/profile-pictures/default.png">
+                                        <img class="default-select-image" src="{{ URL::to('/') }}/material/default-pictures/profile.png">
                                     </div>
                                     <h4 class="card-title social-card-title poppings-font-bold card-default-text-header">Hola {{\Illuminate\Support\Facades\Auth::user()->name}}</h4>
                                 </div>
@@ -76,16 +76,20 @@
                             <div class="col-12">
                                 <div class="card card-stats card-social card-reqr default-card">
                              @elseif(count($profiles) === 2)
-                             <div class="col-6">
+                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="card card-stats card-social card-reqr">
                              @else
-                             <div class="adaptative-col col-sm-6 col-md-6">
+                             <div class="adaptative-col">
                                 <div class="card card-stats card-social card-reqr">
                              @endif
 
                                 <div class="card-header card-header-info card-header-icon">
                                     <div class="card-image">
-                                        <i><img class="select-image" src="{{ URL::to('/') }}/profile-pictures/{{$profile->profile_image}}"></i>
+                                        @if($profile->profile_image === null)
+                                            <img class="select-image" src="{{ URL::to('/') }}/material/default-pictures/profile.png">
+                                        @else
+                                            <i><img class="select-image" src="{{ URL('/') }}/user-media/{{$profile->url_qr}}/cover-picture/{{$profile->profile_image}}"></i>
+                                        @endif
                                     </div>
                                     <div class="card-icons">
                                         <img class="card-img-icon" src="{{ asset('material') }}/img/copy.png">
@@ -149,7 +153,7 @@
                     {{--here end the profiles loop--}}
                     @endif
 
-                    <div class="adaptative-col">
+                    <div class="adaptative-col add-column">
                         <div class="container">
                             <button class="social-card-btn poppings-font" onclick="add_profile();">Agregar Nuevo</button>
                         </div>

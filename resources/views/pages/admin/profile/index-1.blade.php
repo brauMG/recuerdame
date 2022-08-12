@@ -4,15 +4,19 @@
     <div class="content-profile-1">
         <div class="container-cover-1">
             @if($profile->cover_image === null)
-                <img class="cover-1" src="{{ URL::to('/') }}/cover-pictures/cover.png">
+                <img class="cover-1" src="{{ URL::to('/') }}/material/default-pictures/cover.png">
             @else
-                <img class="cover-1" src="{{ URL::to('/') }}/cover-pictures/{{$profile->cover_image}}">
+                <img class="cover-1" src="{{ URL('/') }}/user-media/{{$profile->url_qr}}/cover-picture/{{$profile->cover_image}}">
             @endif
         </div>
         <div class="container-main-1">
             <div class="container-info-1">
                 <div class="container-profile-img-1">
-                    <img class="pic-1" src="{{ URL::to('/') }}/profile-pictures/{{$profile->profile_image}}">
+                    @if($profile->profile_image === null)
+                        <img class="pic-1" src="{{ URL::to('/') }}/material/default-pictures/profile.png">
+                    @else
+                        <img class="pic-1" src="{{ URL('/') }}/user-media/{{$profile->url_qr}}/profile-picture/{{$profile->cover_image}}">
+                    @endif
                 </div>
                 <h2 class="profile-name">{{$profile->name}} <strong class="strong">{{$profile->last_name}}</strong></h2>
             </div>
@@ -37,39 +41,73 @@
             </div>
         </div>
         <div class="container--content">
-            <div class="feed-tab content-tab content--active">
-                <div class="line-wrapper">
-                    •
+            <div class="content-tab content--active">
+                <div class="feed-tab">
+                    {{--here starts the foreach--}}
+                    <div class="post-container">
+                        <div class="line-wrapper">
+                            •
+                        </div>
+
+                        <div class="post-wrapper">
+
+                            <header class="cf">
+                                <h1 class="post-title">
+                                    This is the post title
+                                </h1>
+                                <p class="post-metadata">21 de Agosto de 2015, en The Place</p>
+                            </header>
+
+                            <p class="post-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in elementum justo. Integer faucibus mauris non imperdiet luctus. Donec ut quam sit amet mauris bibendum convallis in a risus. Ut ultricies sagittis risus, vitae pulvinar enim imperdiet non. Vestibulum at scelerisque est.
+                            </p>
+                            <img class="img-content" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Family_Portrait.jpg" />
+
+                        </div>
+                    </div>
+                    {{--here ends the foreach--}}
+                    {{--here starts the foreach--}}
+                    <div class="post-container">
+                        <div class="line-wrapper">
+                            •
+                        </div>
+
+                        <div class="post-wrapper">
+
+                            <header class="cf">
+                                <h1 class="post-title">
+                                    Another post title
+                                </h1>
+                                <p class="post-metadata">09 de Julio de 2018, en The Other Place</p>
+                            </header>
+
+                            <p class="post-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim aliquam commodo. Nulla nec semper ligula, quis mollis turpis. Cras ullamcorper feugiat velit, ac fermentum magna dapibus at. Pellentesque et iaculis mi. Donec venenatis, nibh eu placerat sodales, odio leo sollicitudin risus, in lacinia felis urna et est. Fusce sollicitudin vestibulum diam, ac tempus urna sagittis in. Suspendisse potenti. Duis ac arcu vitae eros fermentum lobortis nec dignissim nisl. Phasellus egestas egestas tincidunt. Aliquam mollis nibh vitae iaculis porttitor. Donec risus dui, rhoncus sed diam at, feugiat finibus dolor. Donec auctor quis nisl quis dictum. Donec dapibus ullamcorper tortor, id viverra lectus. Nam finibus massa laoreet nunc blandit condimentum et eget ipsum. Etiam molestie felis vitae quam condimentum consequat.
+                            </p>
+                            <img class="img-content" src="https://media.cntraveler.com/photos/5c0840017732ca62ae9f72e9/16:9/w_2580%2Cc_limit/Hallstatt%2520GettyImages-899427986.jpg" />
+
+                        </div>
+                    </div>
+                    {{--here ends the foreach--}}
                 </div>
-
-                <div class="post-wrapper">
-
-                    <header class="cf">
-                        <h1 class="post-title">
-                            This is the post title
-                        </h1>
-                        <p class="post-metadata">21 de Agosto de 2020, en The Place</p>
-                    </header>
-
-                    <p class="post-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in elementum justo. Integer faucibus mauris non imperdiet luctus. Donec ut quam sit amet mauris bibendum convallis in a risus. Ut ultricies sagittis risus, vitae pulvinar enim imperdiet non. Vestibulum at scelerisque est.
-                    </p>
-                    <img class="img-content" src="https://www.tesla.com/sites/default/files/red-tesla-model-s.jpg" />
-
+            </div>
+            <div class="content-tab">
+                <div class="bio-tab">
+                    Tab Bio
+                    {{--here starts the foreach--}}
                 </div>
-                {{--here starts the foreach--}}
             </div>
-            <div class="bio-tab content-tab">
-                Tab Bio
-                {{--here starts the foreach--}}
+            <div class="content-tab">
+                <div class="mentions-tab">
+                    Tab Mentions
+                    {{--here starts the foreach--}}
+                </div>
             </div>
-            <div class="mentions-tab content-tab">
-                Tab Mentions
-                {{--here starts the foreach--}}
-            </div>
-            <div class="gallery-tab content-tab">
-                Tab Gallery
-                {{--here starts the foreach--}}
+            <div class="content-tab">
+                <div class="gallery-tab">
+                    Tab Gallery
+                    {{--here starts the foreach--}}
+                </div>
             </div>
         </div>
     </div>

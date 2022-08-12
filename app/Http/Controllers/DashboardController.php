@@ -62,24 +62,24 @@ class DashboardController extends Controller
             'type' => ['required'],
             'url_qr' => 'unique:profiles,url_qr',
             'allow_mentions' => ['required'],
-            'profile_image' => ['required', 'max:5000'],
+//            'profile_image' => ['required', 'max:5000'],
             'name' => ['required'],
             'last_name' => ['required'],
             'birth_date' => ['required'],
             'passing_date' => ['required']
         ]);
 
-        $image = $profile_data['profile_image'];
-        $new_image_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('profile-pictures'), $new_image_name);
-        $profile_data['profile_image'] = $new_image_name;
+//        $image = $profile_data['profile_image'];
+//        $new_image_name = rand() . '.' . $image->getClientOriginalExtension();
+//        $image->move(public_path('profile-pictures'), $new_image_name);
+//        $profile_data['profile_image'] = $new_image_name;
 
 
         $stored_data = Profiles::create([
             'type' => $profile_data['type'],
             'url_qr' => $profile_data['url_qr'],
             'allow_mentions' => $profile_data['allow_mentions'],
-            'profile_image' => $profile_data['profile_image'],
+//            'profile_image' => $profile_data['profile_image'],
             'name' => $profile_data['name'],
             'last_name' => $profile_data['last_name'],
             'birth_date' => $profile_data['birth_date'],
